@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<div class="container" style="background-color:white;margin-top:15px;height:700px;border-radius:12px;overflow:scroll;">
+        <% data.forEach(function (user) { %>
+        
+        <ul class="list-group list-group-flush">
+        <div style="border-style:solid;border-radius:12px;margin-top:16px">
+          <li class="list-group-item">Regestration ID-<%=user.Reg%></li>
+          <li class="list-group-item">In date and time-<%=user.Ininfo%></li>
+          <li class="list-group-item">Out date and time-<%=user.Outinfo%></li>
+          <li class="list-group-item">Status-
+                                            <%if (user.Status==0) {%>  Not approved  <%}%>
+                                            <%if (user.Status==1) {%>  approved  <%}%>
+          </li>
+          <div>
+          <li class="list-group-item">Type-<%=user.Type%></li>
+        </ul>
+        
+
+        <% }) %>
+        
+
+</div>
+
+
+<% include ../partials/footer %>

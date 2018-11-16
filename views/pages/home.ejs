@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+
+<div class="container" style="background-color:white;margin-top:15px;height:7000px;border-radius:12px;">
+  
+         
+         <% data.forEach(function (user) { %>
+             
+               <h3>WELCOME <%= user.Name %></h3> 
+				<ul class="list-group list-group-flush">
+  				<li class="list-group-item">Regestration  No-<%=user.Reg%></li>
+  				<li class="list-group-item">Name-<%=user.Name%></li>
+  				<li class="list-group-item">Address-<%=user.Address%></li>
+  				<li class="list-group-item">Fathers Name-<%=user.Father_name%></li>
+  				<li class="list-group-item">Phone no-<%=user.Phone%></li>
+  				<li class="list-group-item">Department-<%=user.Department%></li>
+  				<li class="list-group-item">Room No-<%=user.Roomno%></li>
+				</ul>
+                
+         		
+         		
+                 
+   <div class="container" style="margin-top:2px">
+  <div class="row">
+    <div class="col-sm">
+      					<div class="card" style="width: 18rem;">
+  						<img class="card-img-top" src="images/maintain.jpg" alt="Card image cap">
+  						<div class="card-body">
+   						 <p class="card-text">You can enter your Maintenance requests here</p>
+   						 <a href="/<%=user.Reg%>/maintain"<button class="btn btn-primary">Maintenance</button></a>
+  						</div>
+</div>
+    </div>
+    <div class="col-sm">
+      					<div class="card" style="width: 18rem;">
+  						<img class="card-img-top" src="images/gp2.jpg" alt="Card image cap" style="border:0">
+  						<div class="card-body">
+    					<p class="card-text">You can apply gate pass here and view the details                     </p>
+    					<a href="/<%=user.Reg%>/gatepass"><button class="btn btn-primary">Apply gate pass</button></a>
+              
+  	</div>
+    </div>
+    </div>
+    <div class="col-sm">
+      					<div class="card" style="width: 18rem;">
+  						<img class="card-img-top" src="images/money.jpg" alt="Card image cap">
+  							<div class="card-body">
+    						<p class="card-text">Click here to view the fee structure and payed</p>
+    						<a href="/<%=user.Reg%>/fees"><button class="btn btn-primary">Fees</button></a>
+  							</div>
+</div>
+    </div>
+  </div>                           
+         <% }) %>
+
+</div>
+        
+<% include ../partials/footer %>

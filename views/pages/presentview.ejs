@@ -1,0 +1,31 @@
+<% include ../partials/header %>
+
+<div class="container" style="background-color:white;margin-top:15px;height:640px;border-radius:12px;overflow:scroll;">
+				<% data.forEach(function (user) { %>
+				
+				<ul class="list-group list-group-flush">
+        <div style="border-style:solid;border-radius:12px;margin-top:16px">
+  				<li class="list-group-item">ID -<%=user.Reg%></li>
+  				<li class="list-group-item">Name-<%=user.Name%></li>
+  				<li class="list-group-item">Room number-<%=user.Room%></li>
+          <li class="list-group-item">Block-<%=user.Block%></li>
+          <li class="list-group-item">Date-<%=user.Date%></li>
+          <div>
+				</ul>
+				<% }) %>
+
+
+        
+
+
+  
+        
+
+</div>
+
+
+
+
+
+
+<% include ../partials/footer %>

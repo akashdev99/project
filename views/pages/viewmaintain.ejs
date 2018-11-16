@@ -1,0 +1,33 @@
+<% include ../partials/header %>
+
+<div class="container" style="background-color:white;margin-top:15px;height:700px;border-radius:12px;overflow:scroll;">
+				<% data.forEach(function (user) { %>
+				
+				<ul class="list-group list-group-flush">
+        <div style="border-style:solid;border-radius:12px;margin-top:16px">
+  				<li class="list-group-item">Room No-<%=user.Room_no%></li>
+  				<li class="list-group-item">Block-<%=user.Block%></li>
+  				<li class="list-group-item">Description-<%=user.Description%></li>
+         
+  				
+          
+
+  				<form method="post" action="/warden/<%=user.WARDEN%>/<%=user.Room_no%>/settle">
+          <button class="btn btn-primary"  style="margin-top:12px;margin-bottom:12px">Solved</button>
+
+          </form>
+          <div>
+				</ul>
+				
+
+				<% }) %>
+        
+
+</div>
+
+
+
+
+
+
+<% include ../partials/footer %>

@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+<div class="container" style="background-color:white;margin-top:15px;height:640px;border-radius:12px;">
+  
+         
+         <% data.forEach(function (user) { %>
+             
+               <h3>WELCOME <%= user.Name %></h3> 
+				<ul class="list-group list-group-flush" style="margin-top:20px  ">
+  				<li class="list-group-item">Warden id-<%=user.W_id%></li>
+  				<li class="list-group-item">Name-<%=user.Name%></li>
+  				<li class="list-group-item">Phone no-<%=user.Phone%></li>
+  				<li class="list-group-item">Email-<%=user.Email%></li>
+				</ul>
+
+        <a href="/warden/<%=user.W_id%>/view"><button class="btn btn-primary" style="margin-top:12px;">View Students</button></a> 
+        <a href="/warden/<%=user.W_id%>/fine"><button class="btn btn-primary" style="margin-top:12px;">Fine</button></a>
+        <a href="/warden/<%=user.W_id%>/maintain"><button class="btn btn-primary" style="margin-top:12px;">Maintainence</button></a>  
+        <a href="/warden/<%=user.W_id%>/gatepass"><button class="btn btn-primary" style="margin-top:12px;">Gate pass</button></a>  
+        <a href="/warden/<%=user.W_id%>/outing"><button class="btn btn-primary" style="margin-top:12px;">Outing</button></a>  
+        <a href="/warden/<%=user.W_id%>/attendance"><button class="btn btn-primary" style="margin-top:12px;">Attendance</button></a>       
+         		
+         		
+                 
+                            
+         <% }) %>
+
+</div>
+        
+<% include ../partials/footer %>

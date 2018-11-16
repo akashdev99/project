@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+<div class="container" style="background-color:white;margin-top:15px;height:700px;border-radius:12px;overflow:scroll;">
+				<% data.forEach(function (user) { %>
+				
+				<ul class="list-group list-group-flush">
+        <div style="border-style:solid;border-radius:12px;margin-top:16px">
+  				<li class="list-group-item">Room No-<%=user.Room_no%></li>
+  				<li class="list-group-item">Amount-<%=user.Amount%></li>
+  				<li class="list-group-item">Reason-<%=user.Reason%></li>
+  				<li class="list-group-item">Status-
+                                            <%if (user.Status==0) {%>  Not payed  <%}%>
+                                            <%if (user.Status==1) {%>  Payed  <%}%>
+          </li>
+          <li class="list-group-item">Warden ID-<%=user.W_id%></li>
+          
+
+  				<form method="post" action="/warden/<%=user.W_id%>/<%=user.Room_no%>/settlefine">
+          <button class="btn btn-primary"  style="margin-top:12px;margin-bottom:12px">Settle</button>
+
+          </form>
+          <form method="post" action="/warden/<%=user.W_id%>/<%=user.Room_no%>/deletefine">
+          <button class="btn btn-primary"  style="margin-top:12px;margin-bottom:12px">Delete fine</button>
+
+          </form>
+          <div>
+				</ul>
+				
+
+				<% }) %>
+        <a href="/warden/fineform"><button class="btn btn-primary" style="margin-top:12px">Add fine</button></a>
+
+</div>
+
+
+
+
+
+
+<% include ../partials/footer %>

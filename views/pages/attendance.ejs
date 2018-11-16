@@ -1,0 +1,54 @@
+<% include ../partials/header %>
+
+<div class="container" style="background-color:white;margin-top:15px;height:640px;border-radius:12px;overflow:scroll;">
+				<% data.forEach(function (user) { %>
+				
+				<ul class="list-group list-group-flush">
+        <div style="border-style:solid;border-radius:12px;margin-top:16px">
+  				<li class="list-group-item">ID -<%=user.Reg%></li>
+  				<li class="list-group-item">Name-<%=user.Name%></li>
+  				<li class="list-group-item">Room number-<%=user.Roomno%></li>
+          <li class="list-group-item">Date-<%=user.Date%></li>
+          
+  				<li class="list-group-item">Attendance-
+                                            <%if (user.status==0) {%>  Not taken  <%}%>
+                                            <%if (user.status==1) {%>  Absent  <%}%>
+                                            <%if (user.status==2) {%>  Present  <%}%>
+          </li>
+          
+          
+
+  				<form method="post" action="/warden/attendance/<%=user.WARDEN%>/<%=user.Reg%>/present">
+          <button class="btn btn-primary"  style="margin-top:12px;margin-bottom:12px">Present</button>
+
+          </form>
+          <form method="post" action="/warden/attendance/<%=user.WARDEN%>/<%=user.Reg%>/absent">
+          <button class="btn btn-primary"  style="margin-top:12px;margin-bottom:12px">Absent</button>
+
+          </form>
+          <div>
+				</ul>
+				<% }) %>
+
+
+        <span >
+        <form method="post" action="/warden/attendancepresent" style="display:inline;">
+        <button class="btn btn-primary" style="margin-top:12px">Show present</button>
+        </form>
+        <form method="post" action="/warden/attendanceabsent" style="display:inline;">
+        <button class="btn btn-primary" style="margin-top:12px">Show Absent</button>
+        </form>
+        </span>
+
+
+        
+        
+
+</div>
+
+
+
+
+
+
+<% include ../partials/footer %>

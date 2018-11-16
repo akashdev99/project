@@ -1,0 +1,28 @@
+<% include ../partials/header %>
+				<div class="container" style="background-color:white;margin-top:15px;height:450px;border-radius:12px;">
+						<form method="post" action="/warden/fine/new">
+  						<div class="form-group" >
+    
+  						</div>
+  						<div class="form-group">
+    						<label >Room</label>
+    						<input type="text" class="form-control" name="room" placeholder="Room">
+  						</div>
+  						<div class="form-group">
+    						<label >Amount</label>
+    						<input type="number" class="form-control" name="amount" placeholder="Amount">
+  						</div>
+  						<div class="form-group">
+    						<label >Reason</label>
+    						<input type="text" class="form-control" name="reason" placeholder="Reason">
+  						</div>
+              <div class="form-group">
+                <label >Your ID</label>
+                <input type="text" class="form-control" name="id" placeholder="ID">
+              </div>
+  						
+              <button class="btn btn-primary">Submit</button>
+            </form>
+
+
+<% include ../partials/footer %>
